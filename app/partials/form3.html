@@ -1,0 +1,26 @@
+<h2>Rekapitulacia</h2>
+<div class="recap">
+    <div class="row">
+        <div class="col-md-6"><strong>Meno a priezvisko poistníka</strong></div>
+        <div class="col-md-6">{{data.policyHolder.firstname}} {{data.policyHolder.surname}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><strong>Vek poistníka</strong></div>
+        <div class="col-md-6">{{data.policyHolder.birthDate}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><strong>Typ cesty</strong></div>
+        <div class="col-md-6">{{data.other.travelType | travelType}}</div>
+    </div>
+    <div class="row" ng-show="data.other.travelType === 'RS'">
+        <div class="col-md-6"><strong>Rizikový šport</strong></div>
+        <div class="col-md-6">{{data.other.riskSportType | riskSportType}}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"><strong>Meno a priezvisko poisteného </strong></div>
+        <div class="col-md-6">
+            <span ng-show="!data.insuredPerson.sameAsPolicyHolder">{{data.insuredPerson.firstname}} {{data.insuredPerson.surname}}</span>
+            <span ng-show="data.insuredPerson.sameAsPolicyHolder">{{data.policyHolder.firstname}} {{data.policyHolder.surname}}</span>
+        </div>
+    </div>
+</div>

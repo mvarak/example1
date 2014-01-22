@@ -1,0 +1,25 @@
+<h2>Doplňujúce údaje a údaje o poistenom</h2>
+<form role="form">
+    <div ng-show="data.other.travelType === 'RS'">
+        <div class="form-group">
+            <label for="riskSportType">Typ rizikového športu</label>
+            <select id="riskSportType" class="form-control"
+                    ng-model="data.other.riskSportType" placeholder="Typ športu"
+                    ng-options="value.id as value.name for (key,value) in getRiskSportTypes()">
+            </select>
+        </div>
+    </div>
+    <div ng-show="!data.insuredPerson.sameAsPolicyHolder">
+        <div class="form-group">
+            <label for="insuredPersonFirstname">Meno poisteného</label>
+            <input id="insuredPersonFirstname" type="text" class="form-control"
+                   ng-model="data.insuredPerson.firstname" placeholder="Meno poisteného"/>
+        </div>
+
+        <div class="form-group">
+            <label for="insuredPersonSurname">Priezvisko poisteného</label>
+            <input id="insuredPersonSurname" type="text" class="form-control"
+                   ng-model="data.insuredPerson.surname" placeholder="Priezvisko poisteného"/>
+        </div>
+    </div>
+</form>

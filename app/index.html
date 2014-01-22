@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" ng-app="wizardApp">
+<head>
+    <meta charset="utf-8">
+    <title>My AngularJS App</title>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"/>
+
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Simple Wizard Application</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" ui-view="navigation"></div>
+        <div class="col-md-9" ui-view></div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-md-push-3" ui-view="pager"></div>
+    </div>
+
+</div>
+
+<script data-main="js/main" src="http://requirejs.org/docs/release/2.1.10/minified/require.js"></script>
+<script>
+
+
+
+</script>
+</body>
+</html>

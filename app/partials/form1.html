@@ -1,0 +1,50 @@
+<h2>Údaje o poistníkovi</h2>
+<form role="form">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="policyHolderFirstname">Meno poistníka</label>
+                <input id="policyHolderFirstname" type="text" class="form-control"
+                       ng-model="data.policyHolder.firstname" placeholder="Meno poistníka"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="policyHolderSurname">Priezvisko poistníka</label>
+                <input id="policyHolderSurname" type="text" class="form-control"
+                       ng-model="data.policyHolder.surname" placeholder="Priezvisko poistníka"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="policyHolderBirthDate">Dátum narodenia</label>
+                <input jq-date type="text" id="policyHolderBirthDate" class="form-control input"
+                       ng-model="data.policyHolder.birthDate" placeholder=""/>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+         <div class="col-md-6">
+            <div class="form-group">
+                <label for="travelType">Typ cesty</label>
+                <select id="travelType" class="form-control"
+                        ng-model="data.other.travelType"
+                        ng-options="value.id as value.name for (key,value) in getTravelTypes()"
+                        placeholder="Typ cesty">
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="checkbox">
+        <label>
+            <input id="insuredPersonSameAsHolder" type="checkbox"
+                   ng-model="data.insuredPerson.sameAsPolicyHolder"/><strong>Poistník je zhodný s poisteným?</strong>
+        </label>
+    </div>
+</form>
